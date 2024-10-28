@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        //cookies
+        let key =prompt("enter key you want to set");
+        let value=prompt('enter value you want to set');
+    console.log(document.cookie)
+    document.cookie=`${key}=${value}`
+    console.log(document.cookie)
+// if we give special characters like (: , ; =) in input, then, we need to encode and decode
+document.cookie=`${decodeURIComponent(key)}=${decodeURIComponent(value)}`
+console.log(document.cookie); 
+
+//localStorage
+localStorage.setItem(key,value);
+        console.log(`value at ${key} is ${localStorage.getItem(key)}`)
+        //we can remove local storage by "localStorage.removeItem(key)" if condition is just for example
+       if(localStorage.length==10){
+            localStorage.removeItem(key)
+            localStorage.clear(key);
+
+    }
+console.log( localStorage.key(3))        
+    </script>
+</body>
+</html>

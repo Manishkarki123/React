@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        .div{
+            height: 100%;
+            width: 100%;
+            
+
+        }
+    .form{
+        display: grid;
+        width: 100%;
+        height:100px;
+        justify-content: center;
+ 
+
+
+    }
+
+    .div1{
+        display: flex;
+        height: 200px;
+        width: 200px;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        color: white;      
+               
+    }
+   
+</style>
+    <body>
+        <div class="div">
+            <form onsubmit="submitBtn(event)" class="form" method="post" action="url">
+
+                <label>Username</label><input type="text"
+                    placeholder="...enter name" id="username" />
+
+                <label>Password</label><input id="password" type="password"
+                    placeholder="...enter password" />
+                <!-- <button type="submit" id="submit">Submit
+
+                </button> -->
+
+            </form>
+            <button onclick="clicked()">click
+
+            </button>
+
+        </div>
+        <div onmouseenter="hover()" onmouseleave="hover('red')" class="div1"
+            id="div1">
+            <p>
+                Hello
+            </p>
+        </div>
+        <script>
+          const btn=document.getElementById("submit");
+          btn.addEventListener("click",submitBtn);  
+
+          function submitBtn(e){          
+        event.preventDefault();
+
+          const username=document.getElementById("username");
+          const uservalue=username.value;
+          const password=document.getElementById("password");
+          const passvalue=password.value;
+          alert("username:" +uservalue + " "+ "password:"+passvalue);
+            
+          }
+       // changing the text of button after clicking 
+          function clicked(){
+        document.getElementsByTagName("button")[0].innerHTML="clicked"
+          
+          }
+          function hover(color='green'){
+            document.getElementById('div1').style=`background-color:${color}`
+          }
+
+      
+        
+        </script>
+    </body>
+
+</html>

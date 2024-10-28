@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function testCallBackWitnPromise()
+         {
+            return new Promise((failure,error)=>
+             {
+                setTimeout(()=>{
+                    failure("failed")
+                },2000)
+            })
+            
+        }
+        (async()=>{
+            const a= await testCallBackWitnPromise();
+          const b= await Add();
+            console.log(a);
+        })();
+       
+        function Add(){
+        let a=5,b=5,sum=0;
+
+            while(sum<50){
+                sum+=a+b;
+                console.log("Value in each loop:" +" "+ sum)
+
+            }
+
+            console.log("final value of sum is :"+" "+ sum)
+        }
+        //return new Promise((resolve,error)=>{
+            
+        // })
+        // use resolve('message') to display the success message
+        //if the result is success then, it will do then(value) otherwise, if error then it will use catch()
+        // testCallBackWitnPromise().then((value)=>{
+        //         console.log(value);
+        //     }).catch((error)=>
+        //     {
+        //         console.log('Error:'+error);
+        //     })
+        // testCallBackWitnPromise();
+       
+
+        console.log('hello yar');
+
+    </script>
+</body>
+</html>

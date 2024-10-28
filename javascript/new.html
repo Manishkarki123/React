@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+.div1{
+height: 300px;
+width: 300px;
+background-color: blue;
+color: white;
+display: flex;
+justify-content: center;
+align-items: center;
+
+}
+.div2{
+
+    height: 200px;
+    width: 200px;
+    display: flex;
+    align-items: flex-start;
+    border: 2px solid red;
+    
+}
+.btn1{
+    border-radius: 10px;
+    text-shadow: 2px 2px 2px red;
+    font-size: medium;
+}
+img{
+
+    height: 200px;
+    width: 200px;
+
+}
+
+.div3{
+
+    border: 2px solid black;
+    height: 200px;
+    width: 200px;
+    background-color: blue;
+    position:relative;
+
+}
+/* .div3::after{
+position: absolute;
+content: '';
+transform:scaleZ(0);
+transform-origin: left;
+transition-duration: 1s;
+transition: all;
+}
+.div3:hover ::after{
+    transform: scaleZ(1);
+} */
+
+
+</style>
+    <body>
+        <div onmouseenter="hover()" onmouseleave="hover('green')" class="div1"
+            id="div">
+            <p>
+                World!!!
+            </p>
+
+        </div>
+        <div class="div2">
+            <img src="./images/manish.jpg" id="image" />
+            <button onclick="changeImg()" class="btn1" id="btn">change
+                image</button>
+        </div>
+
+        <div class="div3" onmouseenter="transform()">
+            <p class="p1">
+
+            </p>
+        </div>
+
+        <script>
+function hover(color){
+    document.getElementById('div').style =`background-color: ${color}`
+}
+
+function changeImg(image){
+    document.getElementById('image').src='./images/e.jpg'
+}
+function transform(){
+    document.getElementsByClassName('div3').style='transform:scaleX(1)'
+}
+    </script>
+    </body>
+</html>

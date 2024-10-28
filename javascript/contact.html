@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+</head>
+<style>
+            .nav{
+display: flex;
+flex-direction: row;
+justify-content:  space-around;
+/* align-items: center; */
+
+border: 2px solid red;
+gap: 20px;
+}
+p{
+    position: relative;
+}
+p::after{
+position: absolute;
+content:'';
+height:1px;
+width: 100%;
+background-color: black;
+bottom: 0px;
+left: 0;
+transform-origin: left;
+transform: scaleX(0);
+transition: all;
+transition-duration: 1s;
+
+
+}
+p:hover::after{
+    transform: scaleX(1);
+}
+.image{
+    display: flex;
+    
+    border: 2px solid green;
+
+
+}
+
+.image .img {
+flex: 1;
+border: 2px solid red;
+height: auto;
+
+
+}
+img{
+    
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+</style>
+<body>
+    <nav class="nav">
+        <a  href="index.html"><p>Home</p></a>
+        <a  href="about.html"><p>About us</p></a>
+        <a  href="contact.html"><p>Contact us</p>
+        </a>           
+     </nav>
+</body>
+</html>

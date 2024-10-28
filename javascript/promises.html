@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        function testCallBackWitnPromise(){
+            return new Promise((failure,error)=>
+             {
+                setTimeout(()=>{
+                    failure("failed")
+                },2000)
+        console.log('hello yar');
+
+            })
+            
+        }
+        console.log('hello vai');
+
+        //return new Promise((resolve,error)=>{
+            
+        // })
+        // use resolve('message') to display the success message
+        //if the result is success then, it will do then(value) otherwise, if error then it will use catch()
+        testCallBackWitnPromise().then((value)=>{
+                console.log(value);
+            }).catch((error)=>
+            {
+                console.log('Error:'+error);
+            })
+        // testCallBackWitnPromise();
+ 
+        let promise=new Promise(function(resolve, reject){
+                reject ("Error is thrown")
+              
+        })
+        //Use then to do after something has happened, use it to show resolve
+        promise.catch((err)=>{
+            console.log(err)
+        })
+
+        //promise API
+let promise1= new Promise((resolve,reject)=>{
+    resolve(true);
+})
+//promise2
+let promise2= new Promise((resolve,reject)=>{
+    setTimeout(()=>{
+        reject(new Error('Hey there error!'));
+    },3000)
+})
+
+let promise3= new Promise((resolve,reject)=>{
+    reject(12);
+})
+//if error is found in any of the promise, then promise all will not work
+let promise_all=Promise.all([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+//allSettled is amazing and it gives result along with reason at the error part
+let promise_allSettled=Promise.allSettled([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+   //race waits for the first promise to settle and its result/error becomes the outcome
+
+let promise_race=Promise.race([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+
+//waits for the first promise to fulfill and if all the promises are rejected then it will throw an Aggregate Error
+let promise_any=Promise.any([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+// it makes the resolved promise with the given value
+setTimeout(()=>{
+    let promise_resolve=Promise.resolve([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+},3000);
+
+// it makes the error promise with the given error
+setTimeout(()=>{
+    let promise_error=Promise.reject([promise1,promise2,promise3]).then((value)=>{
+    console.log(value);
+}).catch((error)=>{
+    console.log(error);
+})
+},1000);
+
+
+
+    </script>
+    </body>
+</html>

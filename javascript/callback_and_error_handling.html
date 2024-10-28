@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function testCallBack(){
+        setTimeout(() => {
+            console.log('call back')
+
+        },3000)
+    }
+    testCallBack();
+    console.log('hello');
+
+//Another Call Back function
+    function loadScript(src,callback){
+    script=document.createElement("script");
+    script.src=src;
+document.body.appendChild(script);
+
+    script.onload=function(){
+    callback(null, src);
+
+} 
+
+script.onerror=function(){    
+    callback(new Error("There is an:"));
+}
+}
+
+
+function hello(error, src){
+    if(error){
+        console.log(error) 
+        return
+    }else {
+        console.log("It is the correct SRC:"+src);
+
+    }
+}
+
+
+
+loadScript('https://www.w3schools.com/html/',hello)
+</script>
+</html>

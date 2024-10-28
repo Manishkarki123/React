@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <style>
+        .nav{
+display: flex;
+flex-direction: row;
+justify-content:  space-around;
+/* align-items: center; */
+
+border: 2px solid red;
+gap: 20px;
+
+}
+p{
+    position: relative;
+    text-decoration: none;
+}
+p::after{
+position: absolute;
+content:'';
+height:1px;
+width: 100%;
+background-color: black;
+bottom: 0px;
+left: 0;
+transform-origin: left;
+transform: scaleX(0);
+transition: all;
+transition-duration: 1s;
+
+
+}
+p:hover::after{
+    transform: scaleX(1);
+}
+.image{
+    display: flex;
+    
+    border: 2px solid green;
+
+
+}
+
+.image .img {
+flex: 1;
+border: 2px solid red;
+height: auto;
+
+
+}
+img{
+    
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+
+</style>
+    <body>
+        <nav class="nav">
+          <a  href="home.html"><p>Home</p></a>
+          <a  href="about.html"><p>About us</p></a>
+          <a  href="contact.html"><p>Contact us</p>
+          </a>           
+       </nav>
+        <div class="image"> 
+            <div class="img" style="flex: 2;">
+                <img src="./images/manish.jpg"/>
+                
+            </div>           
+            <div class="img">
+                <img src="./images/prasant.jpg"/>
+               
+            </div>     
+            <div class="img">
+                <img src="./images/dibas.jpg"/>
+                
+           </div> 
+            
+        </div>
+        <script>
+            
+//             let day;
+// day=prompt('enter the number 1 -7')
+// console.log('day',day, typeof day);
+// switch(parseInt(day)){
+//     case(1):
+//     console.log('Sunday')
+//     break;
+//     case(2):
+//     console.log( 'Monday')
+//     break;
+//     case(3):
+//     console.log('Tuesday')  
+//     break;
+//     case(4):
+//     console.log('Wednesday')
+//     break;
+//     case(5):
+//     console.log('Thursday')
+//     break;
+//     case(6):
+//     console.log('Friday')
+//     break;
+//     case(7):
+//     console.log('Saturday')   
+//     break;
+//     default:
+//     console.log('invalid input')
+//     break;
+// }
+// printing odd number using forloop
+// for(i=0;i<=10;i++){
+//     num=prompt('enter the number');
+// console.log('you entered','', num);
+// num=num%2;
+// if(num==1){
+
+//     console.log('it is odd number');
+// }
+// else{
+//     console.log('it is even number');
+// }
+// }
+
+
+// printing odd number using while loop
+// let a=0;
+// while (a<=10) {
+//     let num;
+// num=prompt('enter number 1-10')
+// console.log('you entered', '', num);
+// num=num%2;
+// if(num!=0){
+//     console.log('it is an odd number')  
+
+// }
+// else{
+//     console.log('it is an even number')  
+
+// }
+// a++;
+// }
+
+//do while loop 
+//     let num;
+//     let a=0;
+//     num=parseInt(prompt('enter number'));
+//     console.log('you entered', '', num);
+//     num=num%2;
+//     do{
+//     if(num!=0){
+//     console.log(`${num} an odd number`);  
+
+// }
+// else {
+//     console.log(`${num} is an even number`)  
+
+// }
+
+// a++;
+//     }
+//     while(a<=num);
+
+
+function isValidEmail(email) {
+  // Regular expression for a basic email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Test the email against the regex
+  return emailRegex.test(email);
+}
+
+const email1 = "123@gmail.com";
+const email2 = "invalid-email";
+
+console.log(isValidEmail(email1)); 
+console.log(isValidEmail(email2)); 
+
+        </script>
+    </body>
+</html>
